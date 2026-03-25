@@ -5,7 +5,7 @@ const HeroSlider = ({ onScrollToForm }) => {
     const [current, setCurrent] = useState(0);
 
     useEffect(() => {
-        fetch("http://127.0.0.1:8000/api/products/")
+        fetch("https://hh-100.onrender.com/api/products/")
             .then((res) => res.json())
             .then((data) => setSlides(data))
             .catch((err) => console.error(err));
@@ -28,8 +28,8 @@ const HeroSlider = ({ onScrollToForm }) => {
                 <div
                     key={slide.id}
                     className={`absolute w-full h-full transition-all duration-1000 ${index === current
-                            ? "opacity-100 scale-100"
-                            : "opacity-0 scale-105"
+                        ? "opacity-100 scale-100"
+                        : "opacity-0 scale-105"
                         }`}
                 >
                     {/* Background Image */}

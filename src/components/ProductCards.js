@@ -5,7 +5,7 @@ const ProductCards = ({ onSelectProduct }) => {
     const scrollRef = useRef(null);
 
     useEffect(() => {
-        fetch("http://127.0.0.1:8000/api/products/")
+        fetch("https://hh-100.onrender.com/api/products/")
             .then((res) => res.json())
             .then((data) => setProducts(data))
             .catch((err) => console.error(err));

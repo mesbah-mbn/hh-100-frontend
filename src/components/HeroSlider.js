@@ -24,12 +24,21 @@ const HeroSlider = () => {
     if (slides.length === 0) return null;
 
     return (
-        <section className="relative w-full h-[90vh] overflow-hidden">
+        <section className="relative w-full flex justify-center overflow-hidden bg-white">
 
             <img
                 src={slides[current].image}
                 alt="slider"
-                className="w-full h-full object-cover transition-all duration-1000"
+                className="
+                    transition-all duration-1000
+                    rounded-3xl
+                "
+                style={{
+                    width: "auto",
+                    height: "auto",
+                    maxWidth: "100%",
+                    maxHeight: "90vh",
+                }}
             />
 
             {/* Slider Dots */}
@@ -37,9 +46,7 @@ const HeroSlider = () => {
                 {slides.map((_, index) => (
                     <div
                         key={index}
-                        className={`w-3 h-3 rounded-full ${current === index
-                            ? "bg-green-500"
-                            : "bg-white/60"
+                        className={`w-3 h-3 rounded-full ${current === index ? "bg-green-500" : "bg-black/40"
                             }`}
                     />
                 ))}

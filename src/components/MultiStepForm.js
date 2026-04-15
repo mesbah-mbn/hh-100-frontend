@@ -60,7 +60,7 @@ function MultiStepForm() {
         <div
             id="multi-step-form"
             className="min-h-screen bg-cover bg-center flex items-center justify-center"
-            style={{ backgroundImage: `url(${bgImage})` }}
+        // style={{ backgroundImage: `url(${bgImage})` }}
         >
             <div className="w-full max-w-6xl px-6 py-12">
 

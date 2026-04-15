@@ -30,10 +30,6 @@ const About = () => {
                         Mit modernen Designs, langlebigen Materialien und schneller Umsetzung
                         helfen wir Ihnen, Ihr Zuhause sicherer und schöner zu gestalten.
                     </p>
-
-                    <button className="bg-green-600 text-white px-6 py-3 rounded-xl hover:bg-green-700 transition">
-                        Kontakt aufnehmen
-                    </button>
                 </div>
 
             </div>

@@ -22,7 +22,7 @@ import threeMonth from "../assets/in-3-monaten.png";
 import sixMonth from "../assets/in-6-monaten.png";
 import unclearTime from "../assets/unklar-time.png";
 
-import bgImage from "../assets/roof-bg.jpg";
+// import bgImage from "../assets/roof-bg.jpg";
 
 function MultiStepForm() {
     const [step, setStep] = useState(1);

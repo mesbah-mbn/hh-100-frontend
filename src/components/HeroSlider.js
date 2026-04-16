@@ -22,18 +22,35 @@ const CarouselSlider = () => {
 
                 <Swiper
                     modules={[Autoplay]}
-                    slidesPerView={3}
-                    spaceBetween={20}
                     loop={true}
                     autoplay={{
                         delay: 2500,
                         disableOnInteraction: false,
                     }}
+                    spaceBetween={20}
+                    breakpoints={{
+                        0: { slidesPerView: 1 },      // phones
+                        480: { slidesPerView: 1.5 },  // small phones
+                        640: { slidesPerView: 2 },    // tablets
+                        1024: { slidesPerView: 3 },   // desktop
+                    }}
                     className="pb-6"
                 >
                     {slides.map((slide, index) => (
                         <SwiperSlide key={index}>
-                            <div className="w-full h-[220px] rounded-3xl overflow-hidden flex items-center justify-center bg-white">
+                            <div
+                                className="
+                                    w-full 
+                                    h-[260px] 
+                                    sm:h-[300px] 
+                                    md:h-[340px] 
+                                    lg:h-[380px]
+                                    rounded-3xl 
+                                    overflow-hidden 
+                                    flex items-center justify-center 
+                                    bg-white
+                                "
+                            >
                                 <img
                                     src={slide.image}
                                     alt="product"

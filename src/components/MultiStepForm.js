@@ -169,8 +169,8 @@ function MultiStepForm() {
                         <div className="grid grid-cols-2 gap-6">
                             {[
                                 { img: asap, title: "Schnellstmöglich" },
-                                { img: threeMonth, title: "In 3 Monaten" },
-                                { img: sixMonth, title: "In 6 Monaten" },
+                                { img: threeMonth, title: " In 1-3 Monaten" },
+                                { img: sixMonth, title: "In 3-6 Monaten" },
                                 { img: unclearTime, title: "Unklar" },
                             ].map((item, i) => (
                                 <div key={i} onClick={() => setStep(6)} className={cardStyle}>
@@ -265,7 +265,7 @@ function MultiStepForm() {
                                 href="/datenschutz"
                                 className="text-blue-600 underline"
                             >
-                                Datenschutzerklärung
+                                Mit dem Absenden meiner Anfrage bestätige ich, dass ich die Datenschutzerklärung zur Kenntnis genommen habe.
                             </a>
                         </p>
                     </>

@@ -4,158 +4,220 @@ const PrivacyPolicy = () => {
     return (
         <div className="min-h-screen bg-gray-100 py-20 px-6">
             <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-xl p-10">
-
                 <h1 className="text-4xl font-bold mb-8 text-center">
                     Datenschutzerklärung
                 </h1>
 
                 <div className="space-y-8 text-gray-700 leading-8">
-
+                    {/* 1. Verantwortlicher */}
                     <div>
                         <h2 className="text-2xl font-semibold mb-3">
-                            Umgang mit persönlichen Daten
+                            1. Verantwortlicher
                         </h2>
-
                         <p>
-                            Der Datenschutz wird von uns sehr ernst genommen!
-                            Einige Daten von Benutzer dieser Website werden von uns gespeichert.
-                            Dazu gehören persönliche Daten die mittels Kontaktformular,
-                            Anfrage für kostenlose und unabhängige Beratung oder mittels
-                            Antragsformular bekannt gegeben werden.
+                            Verantwortlich für die Datenverarbeitung auf dieser Website ist:
                         </p>
-
-                        <p>
-                            Es werden keine Daten an Dritte verkauft oder für
-                            Meinungsstudien freigegeben. Wir behalten uns jedoch das Recht vor,
-                            Ihre Daten in Newsletter oder Eigenwerbung für Tochter-
-                            oder Partnerfirmen im gesetzlichen Rahmen zu verwenden.
-                        </p>
-
-                        <p>
-                            Mit dem Besuch unserer Website werden von Ihnen anonyme Daten,
-                            wie zum Beispiel die IP Adresse durch Google Analytics aufgenommen
-                            und gesammelt. Damit wird das Besucheraufkommen gemessen
-                            und ausgewertet.
+                        <p className="mt-2">
+                            <strong>Camim Hamid</strong><br />
+                            15517 Fürstenwalde<br />
+                            E-Mail: hamid.camim@icloud.com<br />
+                            Telefon: +491608503124
                         </p>
                     </div>
 
-
+                    {/* 2. Welche Daten wir erheben */}
                     <div>
                         <h2 className="text-2xl font-semibold mb-3">
-                            Datenschutzerklärung für die Nutzung von Facebook-Plugins (Like-Button)
+                            2. Welche Daten wir erheben
                         </h2>
 
+                        <h3 className="text-xl font-semibold mt-2 mb-1">
+                            2.1 Daten, die Sie uns mitteilen
+                        </h3>
                         <p>
-                            Auf unseren Seiten sind Plugins des sozialen Netzwerks Facebook,
-                            1601 South California Avenue, Palo Alto, CA 94304, USA integriert.
+                            Wir verarbeiten personenbezogene Daten, die Sie uns aktiv übermitteln,
+                            zum Beispiel:
                         </p>
+                        <ul className="list-disc list-inside mt-2 space-y-1">
+                            <li>Name</li>
+                            <li>E-Mail-Adresse</li>
+                            <li>Telefonnummer</li>
+                            <li>Adresse (falls für die Leistungserbringung erforderlich)</li>
+                            <li>Nachrichten, die Sie über Kontaktformulare senden</li>
+                        </ul>
 
+                        <h3 className="text-xl font-semibold mt-4 mb-1">
+                            2.2 Automatisch erhobene Daten (Server-Logs)
+                        </h3>
                         <p>
-                            Die Facebook-Plugins erkennen Sie an dem Facebook-Logo
-                            oder dem „Like-Button“ („Gefällt mir“) auf unserer Seite.
+                            Beim Besuch unserer Website werden automatisch technische Daten erfasst,
+                            die Ihr Browser übermittelt, z.&nbsp;B.:
                         </p>
-
-                        <p>
-                            Eine Übersicht über die Facebook-Plugins finden Sie hier:
-                            http://developers.facebook.com/docs/plugins/
-                        </p>
-
-                        <p>
-                            Wenn Sie unsere Seiten besuchen, wird über das Plugin
-                            eine direkte Verbindung zwischen Ihrem Browser und dem
-                            Facebook-Server hergestellt.
-                        </p>
-
-                        <p>
-                            Facebook erhält dadurch die Information,
-                            dass Sie mit Ihrer IP-Adresse unsere Seite besucht haben.
-                        </p>
-
-                        <p>
-                            Wenn Sie den Facebook „Like-Button“ anklicken während Sie
-                            in Ihrem Facebook-Account eingeloggt sind, können Sie die Inhalte
-                            unserer Seiten auf Ihrem Facebook-Profil verlinken.
-                        </p>
-
-                        <p>
-                            Weitere Informationen hierzu finden Sie in der
-                            Datenschutzerklärung von Facebook unter:
-                            https://de-de.facebook.com/policy.php
+                        <ul className="list-disc list-inside mt-2 space-y-1">
+                            <li>IP-Adresse</li>
+                            <li>Browsertyp und Browserversion</li>
+                            <li>Verwendetes Betriebssystem</li>
+                            <li>Referrer URL</li>
+                            <li>Datum und Uhrzeit der Serveranfrage</li>
+                        </ul>
+                        <p className="mt-2">
+                            Diese Daten sind für den sicheren und stabilen Betrieb der Website erforderlich.
                         </p>
                     </div>
 
-
+                    {/* 3. Zweck der Datenverarbeitung */}
                     <div>
                         <h2 className="text-2xl font-semibold mb-3">
-                            Haftungsausschluss
+                            3. Zweck der Datenverarbeitung
                         </h2>
+                        <p>Wir verarbeiten Ihre Daten zu folgenden Zwecken:</p>
+                        <ul className="list-disc list-inside mt-2 space-y-1">
+                            <li>Beantwortung von Kontaktanfragen</li>
+                            <li>Bereitstellung und Verbesserung unserer Leistungen</li>
+                            <li>Sicherstellung des technischen Betriebs und der Sicherheit der Website</li>
+                            <li>Erfüllung gesetzlicher Pflichten</li>
+                            <li>Analyse der Nutzung der Website (nur mit Einwilligung)</li>
+                        </ul>
+                    </div>
 
+                    {/* 4. Rechtsgrundlagen */}
+                    <div>
+                        <h2 className="text-2xl font-semibold mb-3">
+                            4. Rechtsgrundlagen der Verarbeitung
+                        </h2>
                         <p>
-                            Für Schäden oder irgendwelche Verluste, die durch die
-                            Benutzung und/oder durch Besuche der Links auf dieser Website
-                            haftet auf keinen Fall bau-leads.com.
+                            Die Verarbeitung Ihrer personenbezogenen Daten erfolgt auf Basis der
+                            folgenden Rechtsgrundlagen gemäß Art. 6 DSGVO:
                         </p>
+                        <ul className="list-disc list-inside mt-2 space-y-1">
+                            <li>
+                                Art. 6 Abs. 1 lit. a DSGVO – Einwilligung (z.&nbsp;B. bei Kontaktformularen
+                                oder Cookies, die nicht technisch notwendig sind)
+                            </li>
+                            <li>
+                                Art. 6 Abs. 1 lit. b DSGVO – Vertragserfüllung oder vorvertragliche Maßnahmen
+                            </li>
+                            <li>
+                                Art. 6 Abs. 1 lit. c DSGVO – Erfüllung rechtlicher Verpflichtungen
+                            </li>
+                            <li>
+                                Art. 6 Abs. 1 lit. f DSGVO – Berechtigte Interessen (z.&nbsp;B. Sicherheit,
+                                Stabilität und Verbesserung der Website)
+                            </li>
+                        </ul>
+                    </div>
 
+                    {/* 5. Cookies & Tracking */}
+                    <div>
+                        <h2 className="text-2xl font-semibold mb-3">
+                            5. Cookies und Tracking-Technologien
+                        </h2>
                         <p>
-                            bau-leads.com haftet nicht für die Richtigkeit,
-                            Aktualität und Vollständigkeit der angezeigten bzw.
-                            telefonisch und elektronisch übermittelte Daten und Inhalte.
+                            Wir verwenden Cookies, um unsere Website nutzerfreundlich zu gestalten.
+                            Technisch notwendige Cookies werden ohne Einwilligung gesetzt.
+                            Alle anderen Cookies (z.&nbsp;B. für Statistik oder Marketing) werden
+                            nur mit Ihrer ausdrücklichen Einwilligung gesetzt.
                         </p>
-
-                        <p>
-                            Sie übernehmen keine Haftung für direkte und/oder indirekte Schäden,
-                            die den Nutzern der Website oder Dritten durch Kontakte
-                            oder Transaktionen über das Internet entstehen.
-                        </p>
-
-                        <p>
-                            Obwohl bestmögliche Vorkehrungen garantiert werden,
-                            kann die Sicherheit, Störungsfreiheit, Aktualität und
-                            Vertraulichkeit von Daten aufgrund des öffentlichen
-                            Charakters des Internets nicht abschliessend garantiert werden.
+                        <p className="mt-2">
+                            Sie können Ihre Einwilligung jederzeit über die Cookie-Einstellungen
+                            auf dieser Website widerrufen.
                         </p>
                     </div>
 
-
+                    {/* 6. Speicherdauer */}
                     <div>
                         <h2 className="text-2xl font-semibold mb-3">
-                            Urheberrecht
+                            6. Speicherdauer
                         </h2>
-
                         <p>
-                            Durch das Urheber- und/oder Markenrecht sind die gesamten Inhalte
-                            dieser Website geschützt.
+                            Wir speichern personenbezogene Daten nur so lange, wie es für die jeweiligen
+                            Zwecke erforderlich ist oder wir gesetzlich dazu verpflichtet sind.
                         </p>
+                        <ul className="list-disc list-inside mt-2 space-y-1">
+                            <li>Kontaktanfragen: bis zur abschließenden Bearbeitung</li>
+                            <li>
+                                Vertrags- und Kundendaten: gemäß gesetzlichen Aufbewahrungsfristen
+                                (in der Regel 6–10 Jahre)
+                            </li>
+                            <li>Server-Logdaten: in der Regel 7–30 Tage</li>
+                        </ul>
+                    </div>
 
+                    {/* 7. Weitergabe von Daten */}
+                    <div>
+                        <h2 className="text-2xl font-semibold mb-3">
+                            7. Weitergabe von Daten an Dritte
+                        </h2>
                         <p>
-                            Das Ausdrucken von Teilbereichen zur privaten und internen
-                            Verwendung und oder das Herunterladen dessen ist gestattet,
-                            wenn die rechtlich geschützten Bezeichnungen nicht entfernt werden.
+                            Eine Weitergabe Ihrer personenbezogenen Daten an Dritte erfolgt nur,
+                            wenn dies zur Erfüllung unserer Leistungen erforderlich ist,
+                            wir gesetzlich dazu verpflichtet sind oder Sie eingewilligt haben.
                         </p>
-
-                        <p>
-                            Die teilweise oder gesamthafte Verwendung des Inhaltes
-                            auf elektronische, schriftliche oder andere Weise für öffentliche
-                            und/oder kommerzielle Zwecke ist ohne ausdrückliche Genehmigung
-                            des Betreibers dieser Website nicht gestattet.
+                        <p className="mt-2">
+                            Mögliche Empfänger sind z.&nbsp;B.:
+                        </p>
+                        <ul className="list-disc list-inside mt-2 space-y-1">
+                            <li>Hosting-Provider</li>
+                            <li>E-Mail-Dienstleister</li>
+                            <li>Analyse- oder Tracking-Dienstleister (nur mit Einwilligung)</li>
+                            <li>Zahlungsdienstleister (falls relevant)</li>
+                        </ul>
+                        <p className="mt-2">
+                            Eine Weitergabe an Dritte zu Werbezwecken ohne Ihre Einwilligung erfolgt nicht.
                         </p>
                     </div>
 
-
+                    {/* 8. Ihre Rechte */}
                     <div>
                         <h2 className="text-2xl font-semibold mb-3">
-                            Kontakt & Adresse
+                            8. Ihre Rechte
                         </h2>
-
-                        <p>Bau Leads – Marco Bartholmä</p>
-                        <p>info@bau-leads.com</p>
-                        <p>+41 62 552 03 01</p>
-                        <p>+49 156 7977 0629</p>
-                        <p>www.bau-leads.com</p>
-                        <p>Weiherweg 7</p>
-                        <p>CH-5070 Frick</p>
+                        <p>
+                            Sie haben im Rahmen der geltenden Datenschutzgesetze folgende Rechte
+                            hinsichtlich Ihrer personenbezogenen Daten:
+                        </p>
+                        <ul className="list-disc list-inside mt-2 space-y-1">
+                            <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
+                            <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
+                            <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+                            <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+                            <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+                            <li>Recht auf Widerspruch (Art. 21 DSGVO)</li>
+                            <li>
+                                Recht auf Widerruf erteilter Einwilligungen mit Wirkung für die Zukunft
+                            </li>
+                        </ul>
+                        <p className="mt-2">
+                            Außerdem haben Sie das Recht, sich bei einer zuständigen
+                            Datenschutzaufsichtsbehörde zu beschweren, wenn Sie der Ansicht sind,
+                            dass die Verarbeitung Ihrer personenbezogenen Daten gegen die DSGVO verstößt.
+                        </p>
                     </div>
 
+                    {/* 9. Datensicherheit */}
+                    <div>
+                        <h2 className="text-2xl font-semibold mb-3">
+                            9. Datensicherheit
+                        </h2>
+                        <p>
+                            Wir treffen geeignete technische und organisatorische Maßnahmen,
+                            um Ihre personenbezogenen Daten vor Verlust, Missbrauch,
+                            unbefugtem Zugriff oder Offenlegung zu schützen.
+                        </p>
+                    </div>
+
+                    {/* 10. Änderungen */}
+                    <div>
+                        <h2 className="text-2xl font-semibold mb-3">
+                            10. Änderungen dieser Datenschutzerklärung
+                        </h2>
+                        <p>
+                            Wir behalten uns vor, diese Datenschutzerklärung anzupassen,
+                            damit sie stets den aktuellen rechtlichen Anforderungen entspricht
+                            oder um Änderungen unserer Leistungen in der Datenschutzerklärung
+                            umzusetzen. Die jeweils aktuelle Version ist auf dieser Website abrufbar.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

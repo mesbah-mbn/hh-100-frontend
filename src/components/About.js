@@ -21,14 +21,23 @@ const About = () => {
                     </h2>
 
                     <p className="text-gray-600 mb-4">
-                        Wir sind ein erfahrenes Unternehmen im Bereich Fenster- und Türlösungen.
-                        Unser Ziel ist es, hochwertige Produkte mit professioneller Montage
-                        anzubieten und unseren Kunden den besten Service zu garantieren.
+                        Wir sind ein spezialisierter Hersteller für maßgefertigte Dachfenster
+                        und moderne Tageslichtlösungen. Unser Anspruch ist es, jedes Dachgeschoss
+                        in einen hellen, komfortablen und energieeffizienten Wohnraum zu verwandeln.
+                    </p>
+
+                    <p className="text-gray-600 mb-4">
+                        Mit hochwertigen Materialien, präziser Fertigung und professioneller Montage
+                        bieten wir langlebige Lösungen, die perfekt auf Ihr Zuhause abgestimmt sind.
+                        Unsere Produkte sorgen für mehr Licht, ein besseres Raumklima und ein
+                        deutlich gesteigertes Wohngefühl.
                     </p>
 
                     <p className="text-gray-600 mb-6">
-                        Mit modernen Designs, langlebigen Materialien und schneller Umsetzung
-                        helfen wir Ihnen, Ihr Zuhause sicherer und schöner zu gestalten.
+                        Als deutscher Anbieter legen wir großen Wert auf Qualität, Sicherheit
+                        und transparente Beratung. Von der ersten Anfrage bis zur finalen
+                        Installation begleiten wir Sie zuverlässig – inklusive Unterstützung
+                        bei möglichen staatlichen Förderprogrammen.
                     </p>
                 </div>
 

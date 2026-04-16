@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 
-const HeroSlider = () => {
+import "swiper/css";
+
+const CarouselSlider = () => {
     const [slides, setSlides] = useState([]);
-    const [current, setCurrent] = useState(0);
 
     useEffect(() => {
         fetch("https://hh-100.onrender.com/api/products/")
@@ -11,49 +14,39 @@ const HeroSlider = () => {
             .catch((err) => console.error(err));
     }, []);
 
-    useEffect(() => {
-        if (slides.length === 0) return;
-
-        const interval = setInterval(() => {
-            setCurrent((prev) => (prev + 1) % slides.length);
-        }, 4000);
-
-        return () => clearInterval(interval);
-    }, [slides]);
-
     if (slides.length === 0) return null;
 
     return (
-        <section className="relative w-full flex justify-center overflow-hidden bg-white">
+        <section className="w-full bg-white py-10">
+            <div className="max-w-7xl mx-auto">
 
-            <img
-                src={slides[current].image}
-                alt="slider"
-                className="
-                    transition-all duration-1000
-                    rounded-3xl
-                "
-                style={{
-                    width: "auto",
-                    height: "auto",
-                    maxWidth: "100%",
-                    maxHeight: "90vh",
-                }}
-            />
+                <Swiper
+                    modules={[Autoplay]}
+                    slidesPerView={3}
+                    spaceBetween={20}
+                    loop={true}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    }}
+                    className="pb-6"
+                >
+                    {slides.map((slide, index) => (
+                        <SwiperSlide key={index}>
+                            <div className="w-full h-[220px] rounded-3xl overflow-hidden flex items-center justify-center bg-white">
+                                <img
+                                    src={slide.image}
+                                    alt="product"
+                                    className="max-h-full max-w-full object-contain rounded-2xl"
+                                />
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
 
-            {/* Slider Dots */}
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-3">
-                {slides.map((_, index) => (
-                    <div
-                        key={index}
-                        className={`w-3 h-3 rounded-full ${current === index ? "bg-green-500" : "bg-black/40"
-                            }`}
-                    />
-                ))}
             </div>
-
         </section>
     );
 };
 
-export default HeroSlider;
+export default CarouselSlider;

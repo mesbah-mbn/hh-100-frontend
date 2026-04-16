@@ -15,7 +15,7 @@ const Footer = () => {
             <div className="max-w-6xl mx-auto text-center">
 
                 <h2 className="text-2xl font-semibold mb-3 text-green-600">
-                    FensterPro
+                    Dachfenster-24
                 </h2>
 
                 <p className="text-gray-500 mb-3">
@@ -23,7 +23,7 @@ const Footer = () => {
                 </p>
 
                 <p className="text-gray-400 text-sm">
-                    © {new Date().getFullYear()} FensterPro. Alle Rechte vorbehalten.
+                    © {new Date().getFullYear()} Dachfenster-24. Alle Rechte vorbehalten.
                 </p>
 
             </div>

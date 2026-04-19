@@ -135,12 +135,12 @@ function MultiStepForm() {
     return (
         <div
             id="multi-step-form"
-            className="min-h-screen scroll-mt-28 bg-cover bg-center flex items-center justify-center"
+            className="min-h-screen scroll-mt-56 bg-cover bg-center flex items-start justify-center pt-56 pb-12 md:scroll-mt-28 md:items-center md:pt-28"
         >
-            <div className="w-full max-w-6xl px-6 py-12">
+            <div className="w-full max-w-6xl px-6 py-8 md:py-12">
                 {currentOptionStep && (
                     <>
-                        <h1 className="text-4xl font-bold text-center mb-6">
+                        <h1 className="text-3xl font-bold text-center mb-6 md:text-4xl">
                             {currentOptionStep.title}
                         </h1>
 
@@ -167,7 +167,7 @@ function MultiStepForm() {
 
                 {step === 6 && (
                     <>
-                        <h1 className="text-4xl text-center mb-6">
+                        <h1 className="text-3xl text-center mb-6 md:text-4xl">
                             Wer soll das Angebot erhalten?
                         </h1>
 
@@ -192,7 +192,7 @@ function MultiStepForm() {
 
                 {step === 7 && (
                     <>
-                        <h1 className="text-4xl text-center mb-6">
+                        <h1 className="text-3xl text-center mb-6 md:text-4xl">
                             Wo brauchen Sie die neuen Dachfenster?
                         </h1>
 
@@ -217,7 +217,7 @@ function MultiStepForm() {
 
                 {step === 8 && (
                     <>
-                        <h1 className="text-4xl text-center mb-6">
+                        <h1 className="text-3xl text-center mb-6 md:text-4xl">
                             Auf welche WhatsApp-Nummer dürfen wir Ihnen Ihr persönliches Angebot senden?
                         </h1>
 

@@ -7,7 +7,7 @@ const navLinks = [
     { label: "Firma", href: "/#company-card" },
     { label: "Info", href: "/#website-info" },
     { label: "Kontakt", href: "/#contact" },
-    { label: "Über uns", href: "/#about" },
+    { label: "Ueber uns", href: "/#about" },
 ];
 
 const Navbar = () => {

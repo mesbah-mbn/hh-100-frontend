@@ -7,6 +7,9 @@ import Footer from "./components/Footer";
 import MultiStepForm from "./components/MultiStepForm";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import ContactForm from "./components/ContactForm";
+import WebsiteContext from "./components/WebsiteContext";
+import FlashCard from "./components/FlashCard";
+import Impressum from "./pages/Impressum";
 
 function App() {
   return (
@@ -20,17 +23,17 @@ function App() {
             <>
               <br />
               <MultiStepForm />
+              <FlashCard />
               <HeroSlider />
+              <WebsiteContext />
               <ContactForm />
               <About />
             </>
           }
         />
 
-        <Route
-          path="/datenschutz"
-          element={<PrivacyPolicy />}
-        />
+        <Route path="/datenschutz" element={<PrivacyPolicy />} />
+        <Route path="/impressum" element={<Impressum />} />
       </Routes>
 
       <Footer />

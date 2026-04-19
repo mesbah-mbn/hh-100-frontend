@@ -22,25 +22,102 @@ import threeMonth from "../assets/in-3-monaten.png";
 import sixMonth from "../assets/in-6-monaten.png";
 import unclearTime from "../assets/unklar-time.png";
 
-// import bgImage from "../assets/roof-bg.jpg";
+const cardStyle =
+    "bg-white p-6 md:p-8 rounded-xl cursor-pointer shadow-lg hover:scale-105 transition";
+
+const optionSteps = {
+    1: {
+        field: "projectType",
+        label: "Projektart",
+        title: "Sind die Fenster für einen Neubau oder Austausch?",
+        nextStep: 2,
+        options: [
+            { img: neubau, title: "Neubau" },
+            { img: austausch, title: "Austausch" },
+        ],
+    },
+    2: {
+        field: "roofType",
+        label: "Dachform",
+        title: "Welche Dachform hat das Gebäude?",
+        nextStep: 3,
+        options: [
+            { img: satteldach, title: "Satteldach" },
+            { img: walmdach, title: "Walmdach" },
+            { img: flachdach, title: "Flachdach" },
+            { img: unklarRoof, title: "Unklar" },
+        ],
+    },
+    3: {
+        field: "windowCount",
+        label: "Anzahl der Fenster",
+        title: "Um wie viele Fenster handelt es sich?",
+        nextStep: 4,
+        options: [
+            { img: oneTwo, title: "1 - 2 Fenster" },
+            { img: threeFive, title: "3 - 5 Fenster" },
+            { img: moreFive, title: "Über 5 Fenster" },
+            { img: unclearWindow, title: "Unklar" },
+        ],
+    },
+    4: {
+        field: "shutters",
+        label: "Rollläden",
+        title: "Sollen zusätzlich Rollläden angebracht werden?",
+        nextStep: 5,
+        options: [
+            { img: ja, title: "Ja" },
+            { img: nein, title: "Nein" },
+            { img: unclearBuilding, title: "Unklar" },
+        ],
+    },
+    5: {
+        field: "timeline",
+        label: "Gewünschter Zeitraum",
+        title: "Wann möchten Sie Ihre neuen Dachfenster haben?",
+        nextStep: 6,
+        options: [
+            { img: asap, title: "Schnellstmöglich" },
+            { img: threeMonth, title: "In 1-3 Monaten" },
+            { img: sixMonth, title: "In 3-6 Monaten" },
+            { img: unclearTime, title: "Unklar" },
+        ],
+    },
+};
 
 function MultiStepForm() {
     const [step, setStep] = useState(1);
-
     const [form, setForm] = useState({
         name: "",
         postcode: "",
         phone: "",
     });
+    const [projectDetails, setProjectDetails] = useState({});
+
+    const handleOptionSelect = (optionStep, value) => {
+        setProjectDetails({
+            ...projectDetails,
+            [optionStep.field]: value,
+        });
+        setStep(optionStep.nextStep);
+    };
 
     const handleSubmit = async () => {
+        const message = Object.values(optionSteps)
+            .map((optionStep) => `${optionStep.label}: ${projectDetails[optionStep.field] || "Nicht angegeben"}`)
+            .join("\n");
+
         try {
             const response = await fetch("https://hh-100.onrender.com/api/leads/", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(form),
+                body: JSON.stringify({
+                    ...form,
+                    product: "Dachfenster Anfrage",
+                    message,
+                }),
             });
 
             if (response.ok) {
@@ -53,54 +130,32 @@ function MultiStepForm() {
         }
     };
 
-    const cardStyle =
-        "bg-white p-8 rounded-xl cursor-pointer shadow-lg hover:scale-105 transition";
+    const currentOptionStep = optionSteps[step];
 
     return (
         <div
             id="multi-step-form"
-            className="min-h-screen bg-cover bg-center flex items-center justify-center"
-        // style={{ backgroundImage: `url(${bgImage})` }}
+            className="min-h-screen scroll-mt-28 bg-cover bg-center flex items-center justify-center"
         >
             <div className="w-full max-w-6xl px-6 py-12">
-
-                {/* STEP 1 */}
-                {step === 1 && (
+                {currentOptionStep && (
                     <>
                         <h1 className="text-4xl font-bold text-center mb-6">
-                            Sind die Fenster für einen Neubau oder Austausch?
+                            {currentOptionStep.title}
                         </h1>
 
-                        <div className="flex justify-center gap-8">
-                            <div onClick={() => setStep(2)} className={cardStyle}>
-                                <img src={neubau} className="w-40 h-40 mx-auto" alt="" />
-                                <h2 className="text-xl text-center mt-4">Neubau</h2>
-                            </div>
-
-                            <div onClick={() => setStep(2)} className={cardStyle}>
-                                <img src={austausch} className="w-40 h-40 mx-auto" alt="" />
-                                <h2 className="text-xl text-center mt-4">Austausch</h2>
-                            </div>
-                        </div>
-                    </>
-                )}
-
-                {/* STEP 2 */}
-                {step === 2 && (
-                    <>
-                        <h1 className="text-4xl text-center mb-6">
-                            Welche Dachform hat das Gebäude?
-                        </h1>
-
-                        <div className="grid grid-cols-2 gap-6">
-                            {[
-                                { img: satteldach, title: "Satteldach" },
-                                { img: walmdach, title: "Walmdach" },
-                                { img: flachdach, title: "Flachdach" },
-                                { img: unklarRoof, title: "Unklar" },
-                            ].map((item, i) => (
-                                <div key={i} onClick={() => setStep(3)} className={cardStyle}>
-                                    <img src={item.img} className="w-32 h-32 mx-auto" alt="" />
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            {currentOptionStep.options.map((item) => (
+                                <div
+                                    key={item.title}
+                                    onClick={() => handleOptionSelect(currentOptionStep, item.title)}
+                                    className={cardStyle}
+                                >
+                                    <img
+                                        src={item.img}
+                                        className="w-32 h-32 md:w-40 md:h-40 mx-auto object-contain"
+                                        alt={item.title}
+                                    />
                                     <h2 className="text-xl text-center mt-4">
                                         {item.title}
                                     </h2>
@@ -110,81 +165,6 @@ function MultiStepForm() {
                     </>
                 )}
 
-                {/* STEP 3 */}
-                {step === 3 && (
-                    <>
-                        <h1 className="text-4xl text-center mb-6">
-                            Um wie viele Fenster handelt es sich?
-                        </h1>
-
-                        <div className="grid grid-cols-2 gap-6">
-                            {[
-                                { img: oneTwo, title: "1 - 2 Fenster" },
-                                { img: threeFive, title: "3 - 5 Fenster" },
-                                { img: moreFive, title: "Über 5 Fenster" },
-                                { img: unclearWindow, title: "Unklar" },
-                            ].map((item, i) => (
-                                <div key={i} onClick={() => setStep(4)} className={cardStyle}>
-                                    <img src={item.img} className="w-32 h-32 mx-auto" alt="" />
-                                    <h2 className="text-xl text-center mt-4">
-                                        {item.title}
-                                    </h2>
-                                </div>
-                            ))}
-                        </div>
-                    </>
-                )}
-
-                {/* STEP 4 */}
-                {step === 4 && (
-                    <>
-                        <h1 className="text-4xl text-center mb-6">
-                            Sollen zusätzlich Rolläden angebracht werden?
-                        </h1>
-
-                        <div className="grid grid-cols-2 gap-6">
-                            {[
-                                { img: ja, title: "Ja" },
-                                { img: nein, title: "Nein" },
-                                { img: unclearBuilding, title: "Unklar" },
-                            ].map((item, i) => (
-                                <div key={i} onClick={() => setStep(5)} className={cardStyle}>
-                                    <img src={item.img} className="w-32 h-32 mx-auto" alt="" />
-                                    <h2 className="text-xl text-center mt-4">
-                                        {item.title}
-                                    </h2>
-                                </div>
-                            ))}
-                        </div>
-                    </>
-                )}
-
-                {/* STEP 5 */}
-                {step === 5 && (
-                    <>
-                        <h1 className="text-4xl text-center mb-6">
-                            Wann möchten Sie Ihre neuen Dachfenster haben?
-                        </h1>
-
-                        <div className="grid grid-cols-2 gap-6">
-                            {[
-                                { img: asap, title: "Schnellstmöglich" },
-                                { img: threeMonth, title: " In 1-3 Monaten" },
-                                { img: sixMonth, title: "In 3-6 Monaten" },
-                                { img: unclearTime, title: "Unklar" },
-                            ].map((item, i) => (
-                                <div key={i} onClick={() => setStep(6)} className={cardStyle}>
-                                    <img src={item.img} className="w-32 h-32 mx-auto" alt="" />
-                                    <h2 className="text-xl text-center mt-4">
-                                        {item.title}
-                                    </h2>
-                                </div>
-                            ))}
-                        </div>
-                    </>
-                )}
-
-                {/* STEP 6 */}
                 {step === 6 && (
                     <>
                         <h1 className="text-4xl text-center mb-6">
@@ -210,7 +190,6 @@ function MultiStepForm() {
                     </>
                 )}
 
-                {/* STEP 7 */}
                 {step === 7 && (
                     <>
                         <h1 className="text-4xl text-center mb-6">
@@ -236,7 +215,6 @@ function MultiStepForm() {
                     </>
                 )}
 
-                {/* STEP 8 */}
                 {step === 8 && (
                     <>
                         <h1 className="text-4xl text-center mb-6">

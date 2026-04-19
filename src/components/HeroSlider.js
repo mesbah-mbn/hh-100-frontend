@@ -17,9 +17,8 @@ const CarouselSlider = () => {
     if (slides.length === 0) return null;
 
     return (
-        <section className="w-full bg-white py-10">
+        <section className="w-full bg-white px-6 py-10">
             <div className="max-w-7xl mx-auto">
-
                 <Swiper
                     modules={[Autoplay]}
                     loop={true}
@@ -37,24 +36,26 @@ const CarouselSlider = () => {
                     className="pb-6"
                 >
                     {slides.map((slide, index) => (
-                        <SwiperSlide key={index}>
+                        <SwiperSlide key={slide.id || index} className="h-auto">
                             <div
                                 className="
-                                    w-full 
-                                    h-[260px] 
-                                    sm:h-[300px] 
-                                    md:h-[340px] 
+                                    group
+                                    h-[260px]
+                                    w-full
+                                    sm:h-[300px]
+                                    md:h-[340px]
                                     lg:h-[380px]
-                                    rounded-3xl 
-                                    overflow-hidden 
-                                    flex items-center justify-center 
-                                    bg-white
+                                    overflow-hidden
+                                    rounded-3xl
+                                    bg-slate-100
+                                    shadow-lg
+                                    shadow-slate-900/10
                                 "
                             >
                                 <img
                                     src={slide.image}
-                                    alt="product"
-                                    className="max-h-full max-w-full object-contain rounded-2xl"
+                                    alt={slide.title || "Dachfenster Produkt"}
+                                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                                 />
                             </div>
                         </SwiperSlide>

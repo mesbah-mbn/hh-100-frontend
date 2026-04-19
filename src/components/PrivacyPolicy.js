@@ -9,7 +9,6 @@ const PrivacyPolicy = () => {
                 </h1>
 
                 <div className="space-y-8 text-gray-700 leading-8">
-                    {/* 1. Verantwortlicher */}
                     <div>
                         <h2 className="text-2xl font-semibold mb-3">
                             1. Verantwortlicher
@@ -25,7 +24,6 @@ const PrivacyPolicy = () => {
                         </p>
                     </div>
 
-                    {/* 2. Welche Daten wir erheben */}
                     <div>
                         <h2 className="text-2xl font-semibold mb-3">
                             2. Welche Daten wir erheben
@@ -42,16 +40,16 @@ const PrivacyPolicy = () => {
                             <li>Name</li>
                             <li>E-Mail-Adresse</li>
                             <li>Telefonnummer</li>
-                            <li>Adresse (falls für die Leistungserbringung erforderlich)</li>
+                            <li>Adresse, falls für die Leistungserbringung erforderlich</li>
                             <li>Nachrichten, die Sie über Kontaktformulare senden</li>
                         </ul>
 
                         <h3 className="text-xl font-semibold mt-4 mb-1">
-                            2.2 Automatisch erhobene Daten (Server-Logs)
+                            2.2 Automatisch erhobene Daten
                         </h3>
                         <p>
                             Beim Besuch unserer Website werden automatisch technische Daten erfasst,
-                            die Ihr Browser übermittelt, z.&nbsp;B.:
+                            die Ihr Browser übermittelt, zum Beispiel:
                         </p>
                         <ul className="list-disc list-inside mt-2 space-y-1">
                             <li>IP-Adresse</li>
@@ -65,7 +63,6 @@ const PrivacyPolicy = () => {
                         </p>
                     </div>
 
-                    {/* 3. Zweck der Datenverarbeitung */}
                     <div>
                         <h2 className="text-2xl font-semibold mb-3">
                             3. Zweck der Datenverarbeitung
@@ -76,11 +73,10 @@ const PrivacyPolicy = () => {
                             <li>Bereitstellung und Verbesserung unserer Leistungen</li>
                             <li>Sicherstellung des technischen Betriebs und der Sicherheit der Website</li>
                             <li>Erfüllung gesetzlicher Pflichten</li>
-                            <li>Analyse der Nutzung der Website (nur mit Einwilligung)</li>
+                            <li>Analyse der Nutzung der Website, nur mit Einwilligung</li>
                         </ul>
                     </div>
 
-                    {/* 4. Rechtsgrundlagen */}
                     <div>
                         <h2 className="text-2xl font-semibold mb-3">
                             4. Rechtsgrundlagen der Verarbeitung
@@ -90,33 +86,22 @@ const PrivacyPolicy = () => {
                             folgenden Rechtsgrundlagen gemäß Art. 6 DSGVO:
                         </p>
                         <ul className="list-disc list-inside mt-2 space-y-1">
-                            <li>
-                                Art. 6 Abs. 1 lit. a DSGVO – Einwilligung (z.&nbsp;B. bei Kontaktformularen
-                                oder Cookies, die nicht technisch notwendig sind)
-                            </li>
-                            <li>
-                                Art. 6 Abs. 1 lit. b DSGVO – Vertragserfüllung oder vorvertragliche Maßnahmen
-                            </li>
-                            <li>
-                                Art. 6 Abs. 1 lit. c DSGVO – Erfüllung rechtlicher Verpflichtungen
-                            </li>
-                            <li>
-                                Art. 6 Abs. 1 lit. f DSGVO – Berechtigte Interessen (z.&nbsp;B. Sicherheit,
-                                Stabilität und Verbesserung der Website)
-                            </li>
+                            <li>Art. 6 Abs. 1 lit. a DSGVO - Einwilligung</li>
+                            <li>Art. 6 Abs. 1 lit. b DSGVO - Vertragserfüllung oder vorvertragliche Maßnahmen</li>
+                            <li>Art. 6 Abs. 1 lit. c DSGVO - Erfüllung rechtlicher Verpflichtungen</li>
+                            <li>Art. 6 Abs. 1 lit. f DSGVO - berechtigte Interessen</li>
                         </ul>
                     </div>
 
-                    {/* 5. Cookies & Tracking */}
                     <div>
                         <h2 className="text-2xl font-semibold mb-3">
                             5. Cookies und Tracking-Technologien
                         </h2>
                         <p>
                             Wir verwenden Cookies, um unsere Website nutzerfreundlich zu gestalten.
-                            Technisch notwendige Cookies werden ohne Einwilligung gesetzt.
-                            Alle anderen Cookies (z.&nbsp;B. für Statistik oder Marketing) werden
-                            nur mit Ihrer ausdrücklichen Einwilligung gesetzt.
+                            Technisch notwendige Cookies werden ohne Einwilligung gesetzt. Alle anderen
+                            Cookies, zum Beispiel für Statistik oder Marketing, werden nur mit Ihrer
+                            ausdrücklichen Einwilligung gesetzt.
                         </p>
                         <p className="mt-2">
                             Sie können Ihre Einwilligung jederzeit über die Cookie-Einstellungen
@@ -124,7 +109,6 @@ const PrivacyPolicy = () => {
                         </p>
                     </div>
 
-                    {/* 6. Speicherdauer */}
                     <div>
                         <h2 className="text-2xl font-semibold mb-3">
                             6. Speicherdauer
@@ -135,15 +119,11 @@ const PrivacyPolicy = () => {
                         </p>
                         <ul className="list-disc list-inside mt-2 space-y-1">
                             <li>Kontaktanfragen: bis zur abschließenden Bearbeitung</li>
-                            <li>
-                                Vertrags- und Kundendaten: gemäß gesetzlichen Aufbewahrungsfristen
-                                (in der Regel 6–10 Jahre)
-                            </li>
-                            <li>Server-Logdaten: in der Regel 7–30 Tage</li>
+                            <li>Vertrags- und Kundendaten: gemäß gesetzlichen Aufbewahrungsfristen, in der Regel 6-10 Jahre</li>
+                            <li>Server-Logdaten: in der Regel 7-30 Tage</li>
                         </ul>
                     </div>
 
-                    {/* 7. Weitergabe von Daten */}
                     <div>
                         <h2 className="text-2xl font-semibold mb-3">
                             7. Weitergabe von Daten an Dritte
@@ -154,20 +134,19 @@ const PrivacyPolicy = () => {
                             wir gesetzlich dazu verpflichtet sind oder Sie eingewilligt haben.
                         </p>
                         <p className="mt-2">
-                            Mögliche Empfänger sind z.&nbsp;B.:
+                            Mögliche Empfänger sind zum Beispiel:
                         </p>
                         <ul className="list-disc list-inside mt-2 space-y-1">
                             <li>Hosting-Provider</li>
                             <li>E-Mail-Dienstleister</li>
-                            <li>Analyse- oder Tracking-Dienstleister (nur mit Einwilligung)</li>
-                            <li>Zahlungsdienstleister (falls relevant)</li>
+                            <li>Analyse- oder Tracking-Dienstleister, nur mit Einwilligung</li>
+                            <li>Zahlungsdienstleister, falls relevant</li>
                         </ul>
                         <p className="mt-2">
                             Eine Weitergabe an Dritte zu Werbezwecken ohne Ihre Einwilligung erfolgt nicht.
                         </p>
                     </div>
 
-                    {/* 8. Ihre Rechte */}
                     <div>
                         <h2 className="text-2xl font-semibold mb-3">
                             8. Ihre Rechte
@@ -177,15 +156,13 @@ const PrivacyPolicy = () => {
                             hinsichtlich Ihrer personenbezogenen Daten:
                         </p>
                         <ul className="list-disc list-inside mt-2 space-y-1">
-                            <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
-                            <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
-                            <li>Recht auf Löschung (Art. 17 DSGVO)</li>
-                            <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
-                            <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
-                            <li>Recht auf Widerspruch (Art. 21 DSGVO)</li>
-                            <li>
-                                Recht auf Widerruf erteilter Einwilligungen mit Wirkung für die Zukunft
-                            </li>
+                            <li>Recht auf Auskunft, Art. 15 DSGVO</li>
+                            <li>Recht auf Berichtigung, Art. 16 DSGVO</li>
+                            <li>Recht auf Löschung, Art. 17 DSGVO</li>
+                            <li>Recht auf Einschränkung der Verarbeitung, Art. 18 DSGVO</li>
+                            <li>Recht auf Datenübertragbarkeit, Art. 20 DSGVO</li>
+                            <li>Recht auf Widerspruch, Art. 21 DSGVO</li>
+                            <li>Recht auf Widerruf erteilter Einwilligungen mit Wirkung für die Zukunft</li>
                         </ul>
                         <p className="mt-2">
                             Außerdem haben Sie das Recht, sich bei einer zuständigen
@@ -194,7 +171,6 @@ const PrivacyPolicy = () => {
                         </p>
                     </div>
 
-                    {/* 9. Datensicherheit */}
                     <div>
                         <h2 className="text-2xl font-semibold mb-3">
                             9. Datensicherheit
@@ -206,7 +182,6 @@ const PrivacyPolicy = () => {
                         </p>
                     </div>
 
-                    {/* 10. Änderungen */}
                     <div>
                         <h2 className="text-2xl font-semibold mb-3">
                             10. Änderungen dieser Datenschutzerklärung

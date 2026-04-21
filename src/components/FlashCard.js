@@ -44,14 +44,14 @@ const FlashCard = () => {
                             </h2>
 
                             <p className="mt-5 text-lg leading-8 text-slate-300">
-                                Ihr Ansprechpartner fuer moderne Dachfenster, Planung und unverbindliche Angebotsanfragen.
+                                Ihr Ansprechpartner füer moderne Dachfenster, Planung und unverbindliche Angebotsanfragen.
                             </p>
 
                             <div className="mt-8 h-px bg-white/10" />
 
                             <div className="mt-8 space-y-3 text-sm text-slate-300">
-                                <p>Service fuer Neubau, Austausch und Modernisierung</p>
-                                <p>Kontakt per Anfrageformular oder WhatsApp-Rueckmeldung</p>
+                                <p>Service füer Neubau, Austausch und Modernisierung</p>
+                                <p>Kontakt per Anfrageformular oder WhatsApp-Rüeckmeldung</p>
                             </div>
                         </div>
 

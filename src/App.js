@@ -21,7 +21,6 @@ function App() {
           path="/"
           element={
             <>
-              <br />
               <MultiStepForm />
               <FlashCard />
               <HeroSlider />

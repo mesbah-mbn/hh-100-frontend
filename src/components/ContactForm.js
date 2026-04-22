@@ -17,7 +17,7 @@ const ContactForm = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch("https://hh-100.onrender.com/api/leads/", {
+            const response = await fetch("https://balanced-adaptation-production-c871.up.railway.app/api/leads/", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

@@ -22,11 +22,9 @@ import threeMonth from "../assets/in-3-monaten.png";
 import sixMonth from "../assets/in-6-monaten.png";
 import unclearTime from "../assets/unklar-time.png";
 
-/* CARD STYLE */
 const cardStyle =
     "bg-white p-3 md:p-5 rounded-xl cursor-pointer shadow-md hover:scale-105 transition";
 
-/* STEPS */
 const optionSteps = {
     1: {
         field: "projectType",
@@ -89,6 +87,8 @@ const optionSteps = {
 
 function MultiStepForm() {
     const [step, setStep] = useState(1);
+    const [showPopup, setShowPopup] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const [form, setForm] = useState({
         name: "",
@@ -107,16 +107,17 @@ function MultiStepForm() {
     };
 
     const handleSubmit = async () => {
+        setLoading(true);
         const message = Object.values(optionSteps)
             .map(
                 (s) =>
-                    `${s.label}: ${projectDetails[s.field] || "Nicht angegeben"}`
+                    `${s.label}: ${projectDetails[s.field] || "Nicht angegeben"} `
             )
             .join("\n");
 
         try {
             const res = await fetch(
-                "https://hh-100.onrender.com/api/leads/",
+                "https://balanced-adaptation-production-c871.up.railway.app/api/leads/",
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -128,22 +129,51 @@ function MultiStepForm() {
                 }
             );
 
-            if (res.ok) alert("Erfolgreich gesendet!");
-            else alert("Fehler.");
+            if (res.ok) {
+                setShowPopup(true);
+            } else {
+                alert("Fehler beim Senden. Bitte versuchen Sie es erneut.");
+            }
         } catch {
-            alert("Serverfehler.");
+            alert("Serverfehler. Bitte versuchen Sie es später erneut.");
+        } finally {
+            setLoading(false);
         }
+    };
+
+    const handlePopupClose = () => {
+        setShowPopup(false);
+        window.location.href = "/";
     };
 
     const current = optionSteps[step];
 
     return (
-        /* ✅ PERFECT CENTER FIX */
         <div className="min-h-screen flex flex-col justify-center px-4">
+
+            {/* SUCCESS POPUP */}
+            {showPopup && (
+                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+                    <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-sm w-full mx-4 text-center">
+                        <div className="text-green-500 text-6xl mb-4">✓</div>
+                        <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                            Vielen Dank!
+                        </h2>
+                        <p className="text-gray-600 mb-6">
+                            Ihre Anfrage wurde erfolgreich übermittelt. Wir melden uns so schnell wie möglich bei Ihnen.
+                        </p>
+                        <button
+                            onClick={handlePopupClose}
+                            className="w-full bg-green-600 text-white py-3 rounded-xl hover:bg-green-700 transition font-semibold"
+                        >
+                            Zur Startseite
+                        </button>
+                    </div>
+                </div>
+            )}
 
             <div className="w-full max-w-5xl mx-auto space-y-5">
 
-                {/* STEPS */}
                 {current && (
                     <>
                         <h1 className="text-lg md:text-3xl text-center font-bold">
@@ -173,7 +203,6 @@ function MultiStepForm() {
                     </>
                 )}
 
-                {/* STEP 6 */}
                 {step === 6 && (
                     <>
                         <h1 className="text-lg md:text-3xl text-center font-bold">
@@ -199,7 +228,6 @@ function MultiStepForm() {
                     </>
                 )}
 
-                {/* STEP 7 */}
                 {step === 7 && (
                     <>
                         <h1 className="text-lg md:text-3xl text-center font-bold">
@@ -225,7 +253,6 @@ function MultiStepForm() {
                     </>
                 )}
 
-                {/* STEP 8 */}
                 {step === 8 && (
                     <>
                         <h1 className="text-lg md:text-3xl text-center font-bold">
@@ -244,10 +271,15 @@ function MultiStepForm() {
 
                         <button
                             onClick={handleSubmit}
-                            className="w-full bg-green-700 text-white py-3 rounded"
+                            disabled={loading}
+                            className="w-full bg-green-700 text-white py-3 rounded disabled:opacity-60"
                         >
-                            Angebot erhalten
+                            {loading ? "Wird gesendet..." : "Angebot erhalten"}
                         </button>
+
+                        <p className="text-xs text-gray-500 text-center mt-2 leading-relaxed">
+                            Mit dem Absenden dieses Formulars erklären Sie sich einverstanden, dass Ihre angegebenen personenbezogenen Daten (Name, Postleitzahl, Telefonnummer) zum Zweck der Angebotserstellung gemäß Art. 6 Abs. 1 lit. b DSGVO von uns verarbeitet und gespeichert werden. Ihre Daten werden nicht an Dritte weitergegeben. Sie können Ihre Einwilligung jederzeit widerrufen.
+                        </p>
                     </>
                 )}
             </div>

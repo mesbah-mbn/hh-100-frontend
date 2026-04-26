@@ -130,6 +130,10 @@ function MultiStepForm() {
             );
 
             if (res.ok) {
+                // ✅ Fire Meta Pixel Lead event on successful form submission
+                if (window.fbq) {
+                    window.fbq("track", "Lead");
+                }
                 setShowPopup(true);
             } else {
                 alert("Fehler beim Senden. Bitte versuchen Sie es erneut.");
